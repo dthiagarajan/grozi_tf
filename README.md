@@ -6,14 +6,14 @@ This repository houses all work towards using TensorFlow and other CV tools to r
 
 ### Table of Contents
 
-[Current Tasks](### Current Tasks)
+[Current Tasks](https://github.com/dthiagarajan/grozi_tf#current-tasks)
 
-[Completed Tasks](### Completed Tasks)
+[Completed Tasks](https://github.com/dthiagarajan/grozi_tf#completed-tasks)
 
-[Project Description](### Project Description)
-..*[Introduction](### Introduction)
-..*[Data and Methodology](### Data and Methodology)
-..*[References](### References)
+[Project Description](https://github.com/dthiagarajan/grozi_tf#project-description)
+..*[Introduction](https://github.com/dthiagarajan/grozi_tf#introduction)
+..*[Data and Methodology](https://github.com/dthiagarajan/grozi_tf#data-and-methdology)
+..*[References](https://github.com/dthiagarajan/grozi_tf#references)
 
 
 ### Current Tasks
