@@ -1,1 +1,1 @@
-# Re-visiting Computer Vision research using Tensor Flow
+# Using TensorFlow for CNN's for recognizing *in situ* groceries
