@@ -7,11 +7,13 @@ This repository houses all work towards using TensorFlow and other CV tools to r
 ### Table of Contents
 
 [Current Tasks](### Current-Tasks)
-[Completed Tasks]
-[Project Description]
-..*[Introduction]
-..*[Data and Methodology]
-..*[References]
+
+[Completed Tasks](### Completed-Tasks)
+
+[Project Description](### Project-Description)
+..*[Introduction](### Introduction)
+..*[Data and Methodology](### Data-and-Methodology)
+..*[References](### References)
 
 
 ### Current Tasks
