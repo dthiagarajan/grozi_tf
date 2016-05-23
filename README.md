@@ -3,11 +3,10 @@
 Note: This repo is meant for keeping track of the progress I make on the project I'm working on for the summer of 2016. The full description can be found below, but as the project is in progress, a list of to-dos and tasks will be kept at the top for my own convenience.
 
 ### Current Tasks
-1. 
-..*Pick one product from GroZi-120 (easiest choice would be Tide), and use TF (training and testing) to detect it in 20 shelf images, where half contain Tide, and half don't.
-..*Build up related work for more background - find relevant computer vision tools (e.g. TensorFlow) and relevant application studies, and mention the drawbacks of other apps and tools.
-2. Pick a product that isn't as easily distinguished, and use TF to do the same thing again.
-3. Collect data from Mattin's for actual training.
+1. Become familiar with relevant computer vision tools, find other relevant application studies, and build up related work section of proposal to include the drawbacks of other apps and discuss the utility of selected tools.
+2. Pick one product from GroZi-120 (easiest choice would be Tide), and use TF (training and testing) to detect it in 20 shelf images, where half contain Tide, and half don't.
+3. Pick a product that isn't as easily distinguished, and use TF to do the same thing again.
+4. Collect data from Mattin's for actual training.
 
 ### Completed Tasks
 
@@ -19,7 +18,7 @@ The main problem we hope to address by conducting this study is paramount to mai
 
 Specifically, the purpose of this study will be to build a database of images encompassing the inventory of Mattin's ranging from ideal to realistic shots, as well as to use various approaches to actually recognize the grocery products in Mattin's. This will include color histogram matching, SIFT matching, compared with training a neural network that takes image pairs as input (where the image pair consists of an ideal and realistic shot of a grocery object in Mattin's) for classification.
 #### Data and Methdology
-To begin, we will need to obtain the relevant types of data for input. As mentioned in the previous study, one database that can be used is the (http://grozi.calit2.net/grozi.html}{GroZi-120 database), which is a database of 120 products with images of objects, ranging over various attributes of the image, and where each product has two different representations: either \textit{in situ}, i.e. in a realistic environment, or \textit{in vitro}, i.e. in an idealistic environment. Another possible way to scrape data could be to use Google searches, and take a sample of the top image hits as training/test data.
+To begin, we will need to obtain the relevant types of data for input. As mentioned in the previous study, one database that can be used is the (http://grozi.calit2.net/grozi.html - GroZi-120 database), which is a database of 120 products with images of objects, ranging over various attributes of the image, and where each product has two different representations: either \textit{in situ}, i.e. in a realistic environment, or \textit{in vitro}, i.e. in an idealistic environment. Another possible way to scrape data could be to use Google searches, and take a sample of the top image hits as training/test data.
 
 Additionally, data would be obtained from Mattin's in person, and due to the changing inventory, images and videos can be taken periodically of each product in the whole inventory to better recognize the inventory, given the varying nature of the products sold. To better train the network being used, photos and videos taken in person will vary in scale and lighting to simulate a more realistic environment.
 
