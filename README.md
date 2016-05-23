@@ -1,6 +1,18 @@
 ## Using TensorFlow for CNN's for recognizing *in situ* groceries
 
-Note: This repo is meant for keeping track of the progress I make on the project I'm working on for the summer of 2016. The full description can be found below, but as the project is in progress, a list of to-dos and tasks will be kept at the top for my own convenience.
+Welcome!
+
+This repository houses all work towards using TensorFlow and other CV tools to recognize *in situ* groceries at a particular store (Mattin's, the store located in Duffield Hall at Cornell). All work here was done during the summer of 2016 under the instruction of Dr. Serge Belongie.
+
+### Table of Contents
+
+[Current Tasks]
+[Completed Tasks]
+[Project Description]
+..*[Introduction]
+..*[Data and Methodology]
+..*[References]
+
 
 ### Current Tasks
 1. Become familiar with relevant computer vision tools, find other relevant application studies, and build up related work section of proposal to include the drawbacks of other apps and discuss the utility of selected tools.
