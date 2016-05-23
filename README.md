@@ -1,3 +1,7 @@
+[Foo](#foo)
+
+# Foo
+
 ## Using TensorFlow for CNN's for recognizing *in situ* groceries
 
 Welcome!
@@ -6,7 +10,7 @@ This repository houses all work towards using TensorFlow and other CV tools to r
 
 ### Table of Contents
 
-[Current Tasks]
+[Current Tasks](https://github.com/dthiagarajan/grozi_tf/###Current)
 [Completed Tasks]
 [Project Description]
 ..*[Introduction]
