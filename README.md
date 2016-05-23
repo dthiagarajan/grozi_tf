@@ -2,11 +2,14 @@
 
 Note: This repo is meant for keeping track of the progress I make on the project I'm working on for the summer of 2016. The full description can be found below, but as the project is in progress, a list of to-dos and tasks will be kept at the top for my own convenience.
 
-### Tasks
-1. Pick one product from GroZi-120 (easiest choice would be Tide), and use TF (training and testing) to detect it in 20 shelf images, where half contain Tide, and half don't.
+### Current Tasks
+1. 
+..*Pick one product from GroZi-120 (easiest choice would be Tide), and use TF (training and testing) to detect it in 20 shelf images, where half contain Tide, and half don't.
+..*Build up related work for more background - find relevant computer vision tools (e.g. TensorFlow) and relevant application studies, and mention the drawbacks of other apps and tools.
 2. Pick a product that isn't as easily distinguished, and use TF to do the same thing again.
 3. Collect data from Mattin's for actual training.
-4. 
+
+### Completed Tasks
 
 ### Project Description
 #### Introduction
@@ -22,4 +25,4 @@ Additionally, data would be obtained from Mattin's in person, and due to the cha
 \\ \\
 Once the relevant data has been obtained, it will be used independently on each localization and recognition algorithm, as well as arranged into pairwise input to be used for training on a convolutional neural network built in TensorFlow. Specifically, we will build a sample of several neural networks built in TensorFlow (which will be chosen from the set of all possible networks by using distinctive heuristics) and see how they perform compared to each other on various samplings of training and testing data. Once we have selected the network that performs best, we will compare the results of the standard algorithms with the new accumulation of data to the results in the previous study, as well as comparing how the chosen network built in TensorFlow performs compared to other algorithms on the new accumulation of data.
 #### References
-Merler, Michelle; Galleguillos, Carolina; Belongie, Serge. *Recognizing Groceries in situ Using in vitro Training Data*. SLAM, Minneapolis, MN, 2007..
+Merler, Michelle; Galleguillos, Carolina; Belongie, Serge. *Recognizing Groceries in situ Using in vitro Training Data*. SLAM, Minneapolis, MN, 2007.
