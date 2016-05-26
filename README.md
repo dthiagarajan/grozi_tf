@@ -6,19 +6,19 @@ This repository houses all work towards using TensorFlow and other CV tools to r
 
 ### Notes:
 The tf_tutorial.py file is not working: when run, the following error occurs:
-'''
+```
 Traceback (most recent call last):
   File "tf_tutorial.py", line 1, in <module>
     import tensorflow.examples.tutorials.mnist.input_data
 ImportError: No module named examples.tutorials.mnist.input_data
-'''
+```
 I tried running the input_data.py file to work around that, but that doesn't work as well, giving the following error:
-'''
+```
 Traceback (most recent call last):
   File "input_data.py", line 29, in <module>
     from tensorflow.contrib.learn.python.learn.datasets.mnist import read_data_sets
 ImportError: No module named contrib.learn.python.learn.datasets.mnist
-'''
+```
 Currently, I'm working on fixing this.
 
 ### Table of Contents
