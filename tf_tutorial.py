@@ -1,3 +1,19 @@
+## The following code does work.
+'''
+import tensorflow as tf
+
+x = tf.constant(35, name='x')
+y = tf.Variable(x + 5, name='y')
+
+model = tf.initialize_all_variables()
+
+with tf.Session() as session:
+    session.run(model)
+    print(session.run(y))
+'''
+
+## The following is code that doesn't seem to work, specifically at the import
+
 import tensorflow.examples.tutorials.mnist.input_data
 mnist = input_data.read_data_sets("./MNIST_data/", one_hot=True)
 
@@ -25,6 +41,7 @@ for i in range(1000):
 correct_prediction = tf.equal(tf.argmax(y,1), tf.argmax(y_,1))
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))
 print sess.run(accuracy, feed_dict={x: mnist.test.images, y_: mnist.test.labels})
+
 
 
 
