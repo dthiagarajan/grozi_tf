@@ -5,6 +5,12 @@ Welcome!
 This repository houses all work towards using TensorFlow and other CV tools to recognize *in situ* groceries at a particular store (Mattin's, the store located in Duffield Hall at Cornell). All work here was done during the summer of 2016 under the instruction of Dr. Serge Belongie.
 
 ### Notes:
+5/29/15:
+Figured out why the error kept coming up: the input_data Python file, and the associated imports necessary, are all in a different directory in the TensorFlow soure code (i.e. from their Github), and was not installed through pip. I tried working around that by cloning their repo locally, but that won't work unless I move the relevant files into the folder of my local installation of TensorFlow, which brings up the problem of duplicate folder names. 
+
+As a result, if I were to change those, I'd have to go through almost all of their source code and fix up the import statements based on my own changes, so I'm choosing to just skip this for now, at least until it proves to be an impasse. At the moment, everything else works (in the scope of everything that I've tried/ran so far), so I'll just continue working with the framework, and hopefully, this won't pose a problem over the course of the summer.
+
+5/25/15:
 The tf_tutorial.py file is not working: when run, the following error occurs:
 ```
 Traceback (most recent call last):
