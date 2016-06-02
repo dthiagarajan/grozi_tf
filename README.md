@@ -7,6 +7,9 @@ This repository houses all work towards using TensorFlow and other CV tools to r
 ### Notes:
 These are all in reverse chronological order to keep track of recent updates more easily.
 
+####6/1/15
+Update to the error from the very beginning - it turns out that the installation page on [Tensorflow](https://www.tensorflow.org/versions/0.6.0/get_started/os_setup.html#pip_install) has an outdated version. I installed the 0.8.0 version of TensorFlow, and now all dependencies are there, and the file that works with MNIST data works as detailed in the tutorials.
+
 ####5/29/15
 Figured out why the error kept coming up: the input_data Python file, and the associated imports necessary, are all in a different directory in the TensorFlow soure code (i.e. from their Github), and was not installed through pip. I tried working around that by cloning their repo locally, but that won't work unless I move the relevant files into the folder of my local installation of TensorFlow, which brings up the problem of duplicate folder names. 
 
