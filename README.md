@@ -10,6 +10,8 @@ These are all in reverse chronological order to keep track of recent updates mor
 ####6/7/15
 Now working on using TF to build a network that recognizes Tide on the shelf, as mentioned in the second current task. To do so, I'm essentially using the code available from TensorFlow's repo using CNN's with the CIFAR-10 dataset, and modifying it to work on images that either do or do not have Tide. To do so, the images in my dataset need to be reshaped to be 32 x 32. Then, they need to each be flattened, and the associated label byte should be added to the front of the flattened image information, as mentioned on this [page](http://stackoverflow.com/questions/35032675/how-to-create-dataset-similar-to-cifar-10/35034287).
 
+Another idea I had was to use a higher-level framework built with TensorFlow, such as [TFLearn](http://tflearn.org/). I think this might make it much easier to actually code the various neural network structures to try different networks for training on various images, but as we go on, I'll keep looking for similar high-level frameworks. This will accordingly be added to the related work section of the proposal.
+
 ####6/1/15
 Update to the error from the very beginning - it turns out that the installation page on [Tensorflow](https://www.tensorflow.org/versions/0.6.0/get_started/os_setup.html#pip_install) has an outdated version. I installed the 0.8.0 version of TensorFlow, and now all dependencies are there, and the file that works with MNIST data works as detailed in the tutorials.
 
