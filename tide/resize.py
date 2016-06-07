@@ -3,7 +3,7 @@ from PIL import Image
 size = 32, 32
 
 def init(s):
-	return 'i/video' + str(s) + '.png'
+	return 'video' + str(s) + '.png'
 files = map(init, range(1,49))
 for f in files:
 	out = f.split('.')[0] + '_mod.png'
