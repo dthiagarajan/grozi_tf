@@ -7,20 +7,29 @@ This repository houses all work towards using TensorFlow and other CV tools to r
 ### Notes:
 These are all in reverse chronological order to keep track of recent updates more easily.
 
-####6/7/15
+####6/9/16
+We've now altered the CIFAR-10 code provided from TensorFlow's tutorial pages that uses a CNN for recognition to now distinguish the presence of Tide in a 32 x 32 image. At the moment, it gets everything right when testing (i.e. precision of 1) with the given network structure (the same one used for the CIFAR-10 dataset). Now, we have to figure out how to graph the ROC curve - this may require messing around with the following line of code in cifar10_eval.py:
+```
+top_k_op = tf.nn.in_top_k(logits, labels, 1)
+```
+Specifically, we need to vary the threshold that determines if a logit matches with a label, and plot the according pairs of false positive rates and true positive rates (or 1 - specificity versus the sensitivity). From here, if the ROC curve looks more or less like what was obtained on distinguishing just Tide in the previous study, we will move on to more difficult products, in addition to incorporating more classes for classification.
+
+To actually alter the code, we will inspect the logits tensor and the labels tensor, and figure out how the method works to determine the relevant data for plotting the ROC curve.
+
+####6/7/16
 Now working on using TF to build a network that recognizes Tide on the shelf, as mentioned in the second current task. To do so, I'm essentially using the code available from TensorFlow's repo using CNN's with the CIFAR-10 dataset, and modifying it to work on images that either do or do not have Tide. To do so, the images in my dataset need to be reshaped to be 32 x 32. Then, they need to each be flattened, and the associated label byte should be added to the front of the flattened image information, as mentioned on this [page](http://stackoverflow.com/questions/35032675/how-to-create-dataset-similar-to-cifar-10/35034287).
 
 Another idea I had was to use a higher-level framework built with TensorFlow, such as [TFLearn](http://tflearn.org/). I think this might make it much easier to actually code the various neural network structures to try different networks for training on various images, but as we go on, I'll keep looking for similar high-level frameworks. This will accordingly be added to the related work section of the proposal, but we will still keep options open for using TensorFlow solely.
 
-####6/1/15
+####6/1/16
 Update to the error from the very beginning - it turns out that the installation page on [Tensorflow](https://www.tensorflow.org/versions/0.6.0/get_started/os_setup.html#pip_install) has an outdated version. I installed the 0.8.0 version of TensorFlow, and now all dependencies are there, and the file that works with MNIST data works as detailed in the tutorials.
 
-####5/29/15
+####5/29/16
 Figured out why the error kept coming up: the input_data Python file, and the associated imports necessary, are all in a different directory in the TensorFlow soure code (i.e. from their Github), and was not installed through pip. I tried working around that by cloning their repo locally, but that won't work unless I move the relevant files into the folder of my local installation of TensorFlow, which brings up the problem of duplicate folder names. 
 
 As a result, if I were to change those, I'd have to go through almost all of their source code and fix up the import statements based on my own changes, so I'm choosing to just skip this for now, at least until it proves to be an impasse. At the moment, everything else works (in the scope of everything that I've tried/ran so far), so I'll just continue working with the framework, and hopefully, this won't pose a problem over the course of the summer.
 
-####5/25/15
+####5/25/16
 The tf_tutorial.py file is not working: when run, the following error occurs:
 ```
 Traceback (most recent call last):
