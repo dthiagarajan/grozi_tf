@@ -44,14 +44,15 @@ import tarfile
 from six.moves import urllib
 import tensorflow as tf
 
-from tensorflow.models.image.cifar10 import cifar10_input
+# from tensorflow.models.image.cifar10
+import cifar10_input
 
 FLAGS = tf.app.flags.FLAGS
 
 # Basic model parameters.
 tf.app.flags.DEFINE_integer('batch_size', 128,
                             """Number of images to process in a batch.""")
-tf.app.flags.DEFINE_string('data_dir', '/tmp/cifar10_data',
+tf.app.flags.DEFINE_string('data_dir', '../tide',
                            """Path to the CIFAR-10 data directory.""")
 
 # Global constants describing the CIFAR-10 data set.
@@ -145,8 +146,8 @@ def distorted_inputs():
   """
   if not FLAGS.data_dir:
     raise ValueError('Please supply a data_dir')
-  data_dir = os.path.join(FLAGS.data_dir, 'cifar-10-batches-bin')
-  return cifar10_input.distorted_inputs(data_dir=data_dir,
+  # data_dir = os.path.join(FLAGS.data_dir, 'grozi-tide-bin')
+  return cifar10_input.distorted_inputs(data_dir=FLAGS.data_dir,
                                         batch_size=FLAGS.batch_size)
 
 
@@ -165,8 +166,8 @@ def inputs(eval_data):
   """
   if not FLAGS.data_dir:
     raise ValueError('Please supply a data_dir')
-  data_dir = os.path.join(FLAGS.data_dir, 'cifar-10-batches-bin')
-  return cifar10_input.inputs(eval_data=eval_data, data_dir=data_dir,
+  # data_dir = os.path.join(FLAGS.data_dir, 'grozi-tide-bin')
+  return cifar10_input.inputs(eval_data=eval_data, data_dir=FLAGS.data_dir,
                               batch_size=FLAGS.batch_size)
 
 
