@@ -135,7 +135,7 @@ def _generate_image_and_label_batch(image, label, min_queue_examples,
   return images, tf.reshape(label_batch, [batch_size])
 
 
-def distorted_inputs(data_dir, batch_size):
+def distorted_inputs(eval_data, data_dir, batch_size):
   """Construct distorted input for CIFAR training using the Reader ops.
 
   Args:
@@ -148,8 +148,14 @@ def distorted_inputs(data_dir, batch_size):
   """
   # filenames = [os.path.join(data_dir, 'data_batch_%d.bin' % i)
   #              for i in xrange(1, 6)]
-  filenames = [os.path.join(data_dir, 'tide_train.bin'),
-               os.path.join(data_dir, 'nottide_train.bin')]
+  if not eval_data:
+    filenames = [os.path.join(data_dir, 'tide_train.bin'),
+                 os.path.join(data_dir, 'nottide_train.bin')]
+    num_examples_per_epoch = NUM_EXAMPLES_PER_EPOCH_FOR_TRAIN
+  else:
+    filenames = [os.path.join(data_dir, 'test_batch.bin')]
+    num_examples_per_epoch = NUM_EXAMPLES_PER_EPOCH_FOR_EVAL
+
   for f in filenames:
     if not tf.gfile.Exists(f):
       raise ValueError('Failed to find file: ' + f)
