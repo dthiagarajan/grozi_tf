@@ -4,6 +4,22 @@ Welcome!
 
 This repository houses all work towards using TensorFlow and other CV tools to recognize *in situ* groceries at a particular store (Mattin's, the store located in Duffield Hall at Cornell). All work here was done during the summer of 2016 under the instruction of Dr. Serge Belongie.
 
+### Table of Contents
+
+[Notes](https://github.com/dthiagarajan/grozi_tf#notes)
+
+[Current Tasks](https://github.com/dthiagarajan/grozi_tf#current-tasks)
+
+[Completed Tasks](https://github.com/dthiagarajan/grozi_tf#completed-tasks)
+
+[Project Description](https://github.com/dthiagarajan/grozi_tf#project-description)
+
+1. [Introduction](https://github.com/dthiagarajan/grozi_tf#introduction)
+2. [Data and Methodology](https://github.com/dthiagarajan/grozi_tf#data-and-methdology)
+3. [References](https://github.com/dthiagarajan/grozi_tf#references)
+
+[Archives](https://github.com/dthiagarajan/grozi_tf#archives)
+
 ### Notes:
 These are all in reverse chronological order to keep track of recent updates more easily. (6/13/16) I'll be removing updates that aren't as relevant to current tasks, so everything from 6/1/16 and before will be at the bottom of this README.
 
@@ -24,20 +40,6 @@ Now working on using TF to build a network that recognizes Tide on the shelf, as
 
 Another idea I had was to use a higher-level framework built with TensorFlow, such as [TFLearn](http://tflearn.org/). I think this might make it much easier to actually code the various neural network structures to try different networks for training on various images, but as we go on, I'll keep looking for similar high-level frameworks. This will accordingly be added to the related work section of the proposal, but we will still keep options open for using TensorFlow solely.
 
-
-### Table of Contents
-
-[Current Tasks](https://github.com/dthiagarajan/grozi_tf#current-tasks)
-
-[Completed Tasks](https://github.com/dthiagarajan/grozi_tf#completed-tasks)
-
-[Project Description](https://github.com/dthiagarajan/grozi_tf#project-description)
-
-1. [Introduction](https://github.com/dthiagarajan/grozi_tf#introduction)
-2. [Data and Methodology](https://github.com/dthiagarajan/grozi_tf#data-and-methdology)
-3. [References](https://github.com/dthiagarajan/grozi_tf#references)
-
-[Archives](https://github.com/dthiagarajan/grozi_tf#archives)
 
 
 ### Current Tasks
