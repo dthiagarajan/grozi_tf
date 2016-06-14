@@ -39,6 +39,9 @@ import math
 import time
 
 import numpy as np
+np.set_printoptions(threshold=np.nan)
+from sklearn import metrics
+from matplotlib import pyplot as plt
 import tensorflow as tf
 
 # from tensorflow.models.image.cifar10 import cifar10
@@ -60,7 +63,7 @@ tf.app.flags.DEFINE_boolean('run_once', True,
                          """Whether to run eval only once.""")
 
 
-def eval_once(saver, summary_writer, top_k_op, summary_op):
+def eval_once(saver, summary_writer, top_k_op, summary_op, preds, labels):
   """Run Eval once.
 
   Args:
@@ -107,6 +110,23 @@ def eval_once(saver, summary_writer, top_k_op, summary_op):
       summary.ParseFromString(sess.run(summary_op))
       summary.value.add(tag='Precision @ 1', simple_value=precision)
       summary_writer.add_summary(summary, global_step)
+
+      # print(np.concatenate((np.around(sess.run(preds), decimals=3), sess.run(labels)[:,np.newaxis]), axis=1))
+      # print(sess.run(labels))
+      scores = sess.run(preds)
+      true = sess.run(labels)
+
+      fpr, tpr, thresholds = metrics.roc_curve(true, scores[(np.arange(scores.shape[0]),true)])
+
+      plt.figure()
+      plt.plot(fpr, tpr, label='ROC curve')
+      plt.xlim([0.0, 1.0])
+      plt.ylim([0.0, 1.0])
+      plt.xlabel('False Positive Rate')
+      plt.ylabel('True Positive Rate')
+      plt.title('Recognition ROC curve - Tide')
+      plt.legend(loc="lower right")
+      plt.show()
     except Exception as e:  # pylint: disable=broad-except
       coord.request_stop(e)
 
@@ -128,6 +148,9 @@ def evaluate():
     # Calculate predictions.
     top_k_op = tf.nn.in_top_k(logits, labels, 1)
 
+    # Normalize predictions with softmax
+    preds = tf.nn.softmax(logits, name='predictions')
+
     # Restore the moving average version of the learned variables for eval.
     variable_averages = tf.train.ExponentialMovingAverage(
         cifar10.MOVING_AVERAGE_DECAY)
@@ -140,7 +163,7 @@ def evaluate():
     summary_writer = tf.train.SummaryWriter(FLAGS.eval_dir, g)
 
     while True:
-      eval_once(saver, summary_writer, top_k_op, summary_op)
+      eval_once(saver, summary_writer, top_k_op, summary_op, preds, labels)
       if FLAGS.run_once:
         break
       time.sleep(FLAGS.eval_interval_secs)
