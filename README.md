@@ -27,7 +27,10 @@ These are all in reverse chronological order to keep track of recent updates mor
 Increasing the size of the training set improves the accuracy of the CIFAR-10 network to around 96% consistently, still with distorted input. The following is the ROC curve for various thresholds:
 ![ROC Curve for Tide images trained on CIFAR-10 network](/tide/ROC_tide_cifar10network.png)
 
-Clearly, it's not performing that well, as the uppermost, leftmost point is not very close to (0,1), so we're trying to see how well the Alexnet network does with this dataset. However, we're running into some trouble with the size of the images given to the network. Specifically, the network expects 224x224 images, but this causes the filter in conv2 to complain because it's larger than the input itself (which at this point is 2x2).
+Clearly, it's not performing that well, as the uppermost, leftmost point is not very close to (0,1), so we're trying to see how well the Alexnet network does with this dataset. However, we're running into some trouble with the rank of the output. Specifically, when calculating the loss, we get the following error: regarding the logits:
+```
+ValueError: Shape (128, 6, 6, 256) must have rank 2
+```
 
 ####6/13/16
 Using the CIFAR-10 code, we've augmented the training and testing data set to work with distorted inputs as well (shearing, translation, scaling, etc.), and the precision after running about 8000 epochs was about 92%, so we will run several more epochs to see if that improves the accuracy. If that doesn't work, we'll try modifying the network structure to make it more similar to the structures used in AlexNet and ImageNet and see if that improves the accuracy. If that doesn't work, we'll research more closely to find a better suited network structure.
