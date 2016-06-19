@@ -23,6 +23,15 @@ This repository houses all work towards using TensorFlow and other CV tools to r
 ### Notes:
 These are all in reverse chronological order to keep track of recent updates more easily. (6/13/16) I'll be removing updates that aren't as relevant to current tasks, so everything from 6/1/16 and before will be at the bottom of this README.
 
+####6/15/16
+Increasing the size of the training set improves the accuracy of the CIFAR-10 network to around 96% consistently, still with distorted input. The following is the ROC curve for various thresholds:
+![ROC Curve for Tide images trained on CIFAR-10 network](/tide/ROC_tide_cifar10network.png)
+
+Clearly, it's not performing that well, as the uppermost, leftmost point is not very close to (0,1), so we're trying to see how well the Alexnet network does with this dataset. However, we're running into some trouble with the rank of the output. Specifically, when calculating the loss, we get the following error: regarding the logits:
+```
+ValueError: Shape (128, 6, 6, 256) must have rank 2
+```
+
 ####6/13/16
 Using the CIFAR-10 code, we've augmented the training and testing data set to work with distorted inputs as well (shearing, translation, scaling, etc.), and the precision after running about 8000 epochs was about 92%, so we will run several more epochs to see if that improves the accuracy. If that doesn't work, we'll try modifying the network structure to make it more similar to the structures used in AlexNet and ImageNet and see if that improves the accuracy. If that doesn't work, we'll research more closely to find a better suited network structure.
 
