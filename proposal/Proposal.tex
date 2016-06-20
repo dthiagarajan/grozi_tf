@@ -8,12 +8,17 @@
 \usepackage{hyperref}
 \usepackage{url}
 \usepackage{cite}
+
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
     filecolor=magenta,      
     urlcolor=cyan,
 }
+
+\setlength{\parindent}{0 pt}
+\setlength{\parskip  }{5.5 pt}
+
 \title{Summer Project Proposal}
 \author{Dilip Thiagarajan, Samuel C.\ Hoffman}
 \date{June 20, 2016}
@@ -67,22 +72,42 @@ Another approach is to fine-tune a state-of-the-art network by replacing the las
 \\ \\
 We will be benchmarking both approaches and comparing them to the previous baselines mentioned above.
 \\ \\
-Another important aspect of this project is localization of detected objects in the video frame. Again, there have been great strides recently in this area toward real-time detection with localization particularly using Region Proposal Networks (RPNs). State-of-the-art systems have achieved near-real-time speeds of 5~fps with very deep networks which is fast enough for our purposes.
+Another important aspect of this project is localization of detected objects in the video frame. Again, there have been great strides recently in this area toward real-time detection with localization particularly using Region Proposal Networks (RPNs). State-of-the-art systems have achieved near-real-time speeds of 5~fps with very deep networks which is fast enough for our purposes \cite{ren15}.
 
 \section{Milestones}
 
+Completed:
 
+\begin{itemize}
 
-% \begin{thebibliography}{9}
-% \bibitem{mainpaper} 
-% Merler, Michelle; Galleguillos, Carolina; Belongie, Serge.
-% \textit{Recognizing Groceries in situ Using in vitro Training Data}. 
-% SLAM, Minneapolis, MN, 2007.
-% \bibitem{mainpaper}
-% Lipton, Zachary.
-% \textit{TensorFlow is Terrific – A Sober Take on Deep Learning Acceleration}.
-% http://www.kdnuggets.com/2015/12/tensor-flow-terrific-deep-learning-library.html
-% \end{thebibliography}
+	\item Train basic network on a single class (Tide laundry detergent) (\textit{both})
+
+	\item Output basic performance characteristics (ROC curve, precision/recall) (\textit{both})
+
+\end{itemize}
+
+To do:
+
+\begin{itemize}
+
+	\item Train manageably-sized network (such as AlexNet) from scratch on a single class (\textit{Dilip})
+
+	\item Fine-tune a large network for a single class (\textit{Sam})
+
+	\item Produce framework for outputting performance characteristics for any underlying architecture (\textit{both})
+
+	\item Generalize both approaches above to all 120 categories in GroZi-120
+	(\textit{both})
+
+	\item Incorporate a Region Proposal Network for localization of objects in a single, full video frame (\textit{both})
+
+	\item Create a framework for applying the full workflow on recorded video of store shelves from the GroZi dataset (\textit{both})
+
+	\item Record shelf footage in Mattin's Café and test system (\textit{both})
+
+	\item Incorporate framework into an application using real-time camera data (\textit{both})
+
+\end{itemize}
 
 \bibliographystyle{plain}
 \bibliography{Proposal}
