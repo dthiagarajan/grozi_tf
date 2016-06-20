@@ -66,6 +66,12 @@ One approach is to train a manageably-sized network from scratch on our data set
 Another approach is to fine-tune a state-of-the-art network by replacing the last layer and retraining with our data, starting with the fully-trained weights for the other layers. The early layers in most ConvNets have general functions such as blob detection which are useful for many different applications. If we start out with a network which can identify many higher-order features and then train it to learn class-specific features, we can achieve a very powerful model without spending so long training from scratch \cite{donahue13}. The drawback is that we may need to fine-tune multiple layers to get the best results which, for a state-of-the-art network, may still be a slow process.
 \\ \\
 We will be benchmarking both approaches and comparing them to the previous baselines mentioned above.
+\\ \\
+Another important aspect of this project is localization of detected objects in the video frame. Again, there have been great strides recently in this area toward real-time detection with localization particularly using Region Proposal Networks (RPNs). State-of-the-art systems have achieved near-real-time speeds of 5~fps with very deep networks which is fast enough for our purposes.
+
+\section{Milestones}
+
+
 
 % \begin{thebibliography}{9}
 % \bibitem{mainpaper} 
