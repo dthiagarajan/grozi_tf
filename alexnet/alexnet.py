@@ -1,13 +1,10 @@
 
 """ AlexNet.
-Applying 'Alexnet' to Oxford's 17 Category Flower Dataset classification task.
+Applying 'Alexnet' to the GroZi-120 database.
 References:
     - Alex Krizhevsky, Ilya Sutskever & Geoffrey E. Hinton. ImageNet
     Classification with Deep Convolutional Neural Networks. NIPS, 2012.
     - 17 Category Flower Dataset. Maria-Elena Nilsback and Andrew Zisserman.
-Links:
-    - [AlexNet Paper](http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
-    - [Flower Dataset (17)](http://www.robots.ox.ac.uk/~vgg/data/flowers/17/)
 """
 
 from __future__ import division, print_function, absolute_import
