@@ -23,6 +23,11 @@ This repository houses all work towards using TensorFlow and other CV tools to r
 ### Notes:
 These are all in reverse chronological order to keep track of recent updates more easily. (6/13/16) I'll be removing updates that aren't as relevant to current tasks, so everything from 6/1/16 and before will be at the bottom of this README.
 
+####6/20/16
+Clearly, the ROC curve wasn't indicative of the performance we were hoping for, which makes the 96% precision recall somewhat redundant, so while it is necessary to improve that, we are going to continue to move forward and expand our network to handle all 120 classes of the GroZi dataset. From this, we hope to see improved performance simply from the higher probability of allowing for two things to be distinguished.
+
+To actually get the ROC curves, we will do binary classification on each class. This somewhat contradicts the notion that we hope for the ROC to improve, and thus, we'll be testing out some other network structures on all 120 classes to see if there is any positive effect. So far, the Alexnet structure has been implemented (thanks to TFLearn), and in the near future, such as ResNet and VGG.
+
 ####6/15/16
 Increasing the size of the training set improves the accuracy of the CIFAR-10 network to around 96% consistently, still with distorted input. The following is the ROC curve for various thresholds:
 ![ROC Curve for Tide images trained on CIFAR-10 network](/tide/ROC_tide_cifar10network.png)
