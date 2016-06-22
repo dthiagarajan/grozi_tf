@@ -1,0 +1,13 @@
+*.pyc
+.ipynb_checkpoints
+
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+proposal/*.log
+proposal/*.out
+*.synctex.gz
+/proposal*.pdf
+
