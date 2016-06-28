@@ -38,7 +38,7 @@ These are all in reverse chronological order to keep track of recent updates mor
 
 ### Project Description
 
-For more specific details regarding the motivation for this project, as well as milestones we hope to achieve, see our [proposal][https://github.com/dthiagarajan/grozi_tf/blob/master/proposal/Proposal.pdf].
+For more specific details regarding the motivation for this project, as well as milestones we hope to achieve, see our [proposal](https://github.com/dthiagarajan/grozi_tf/blob/master/proposal/Proposal.pdf).
 
 ### Archives
 
