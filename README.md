@@ -23,9 +23,20 @@ This repository houses all work towards using TensorFlow and other CV tools to r
 ### Notes:
 These are all in reverse chronological order to keep track of recent updates more easily. (6/13/16) I'll be removing updates that aren't as relevant to current tasks, so everything from 6/1/16 and before will be at the bottom of this README.
 
+#### 6/28/16
+While using the other networks do show some signs of improvement over CIFAR-10, overall, the improvement isn't significant enough, so as a short-term measure, we are going to try jittering the data and preprocessing a bit more closely to see if this brings about any improvement. More specifically, this is easily implemented using TFLearn's API by adding some parameters to the input layer:
+```
+# Real-time image preprocessing
+img_prep = tflearn.ImagePreprocessing()
+img_prep.add_featurewise_zero_center()
+img_prep.add_featurewise_stdnorm()
 
-
-
+# Real-time data augmentation
+img_aug = tflearn.ImageAugmentation()
+img_aug.add_random_flip_leftright()
+img_aug.add_random_rotation(max_angle=20.0)
+```
+In the following days, the networks will be run again to evaluate their performance on all 120 classes. From here, we hope to better implement are metrics of evaluation, as well as to start researching things we may do to tweak the actual architecture of the net that we use in the final stages.
 
 ### Current Tasks
 1. Use distorted input methods provided by TF to increase input size and test on the distorted inputs as well.
