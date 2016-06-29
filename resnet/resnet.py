@@ -10,8 +10,23 @@ Links:
 """
 
 
+# Data loading and preprocessing
+import grozi_load
+X, Y = grozi_load.load_data(one_hot=True)
+
+# Real-time image preprocessing
+img_prep = tflearn.ImagePreprocessing()
+img_prep.add_featurewise_zero_center()
+img_prep.add_featurewise_stdnorm()
+
+# Real-time data augmentation
+img_aug = tflearn.ImageAugmentation()
+img_aug.add_random_flip_leftright()
+img_aug.add_random_rotation(max_angle=20.0)
+
 # Building Residual Network
-net = tflearn.input_data(shape=[None, 28, 28, 1])
+net = tflearn.input_data(shape=[None, 28, 28, 1],
+        data_preprocessing=img_prep, data_augmentation=img_aug)
 net = tflearn.conv_2d(net, 64, 3, activation='relu', bias=False)
 # Residual blocks
 net = tflearn.residual_bottleneck(net, 3, 16, 64)

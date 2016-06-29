@@ -19,8 +19,19 @@ from tflearn.layers.estimator import regression
 import grozi_load
 X, Y = grozi_load.load_data(one_hot=True)
 
+# Real-time image preprocessing
+img_prep = tflearn.ImagePreprocessing()
+img_prep.add_featurewise_zero_center()
+img_prep.add_featurewise_stdnorm()
+
+# Real-time data augmentation
+img_aug = tflearn.ImageAugmentation()
+img_aug.add_random_flip_leftright()
+img_aug.add_random_rotation(max_angle=20.0)
+
 # Building 'VGG Network'
-network = input_data(shape=[None, 224, 224, 3])
+network = input_data(shape=[None, 224, 224, 3], 
+	data_preprocessing=img_prep, data_augmentation=img_aug)
 
 network = conv_2d(network, 64, 3, activation='relu')
 network = conv_2d(network, 64, 3, activation='relu')
