@@ -35,7 +35,7 @@ Most, however, looked more like this:
 
 These were generated using undistorted training and testing inputs. For the tide/not-tide binary case, I trained and tested with random cropping, scaling, and brightness changes and no random flipping. The ROC curves look like this:
 ![ROC Curve Tide vs Rest](/roc_curves/roc_curve_tide_vs_rest.png)
-![ROC Curve Not-Tide vs Rest]("/roc_curves/roc_curve_not tide_vs_rest.png")
+![ROC Curve Not-Tide vs Rest](/roc_curves/roc_curve_not_tide_vs_rest.png)
 
 I would like to do a comparison of the ROC curves from the augmented data set vs. non-augmented data set to determine the impact with our data.
 
