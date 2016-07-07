@@ -23,6 +23,22 @@ This repository houses all work towards using TensorFlow and other CV tools to r
 ### Notes:
 These are all in reverse chronological order to keep track of recent updates more easily. (6/13/16) I'll be removing updates that aren't as relevant to current tasks, so everything from 6/1/16 and before will be at the bottom of this README.
 
+#### 7/6/16
+The results of fine-tuning the [Inception v3](http://arxiv.org/abs/1512.00567) network on our data set were underwhelming based on the ROC curves. Some classes which were sufficiently distinctive (e.g. 4 - Cheerios, 34 - Tide) performed well while those for which there was little data (e.g. 16 - Snyder's Pretzels) or pose varied too much (e.g. 59 - Dr. Pepper) performed very poorly:
+![ROC Curve 4 vs Rest](/roc_curves/roc_curve_4_vs_rest.png)
+![ROC Curve 34 vs Rest](/roc_curves/roc_curve_34_vs_rest.png)
+![ROC Curve 16 vs Rest](/roc_curves/roc_curve_16_vs_rest.png)
+![ROC Curve 59 vs Rest](/roc_curves/roc_curve_59_vs_rest.png)
+
+Most, however, looked more like this:
+![ROC Curve 22 vs Rest](/roc_curves/roc_curve_22_vs_rest.png)
+
+These were generated using undistorted training and testing inputs. For the tide/not-tide binary case, I trained and tested with random cropping, scaling, and brightness changes and no random flipping. The ROC curves look like this:
+![ROC Curve Tide vs Rest](/roc_curves/roc_curve_tide_vs_rest.png)
+![ROC Curve Not-Tide vs Rest]("/roc_curves/roc_curve_not tide_vs_rest.png")
+
+I would like to do a comparison of the ROC curves from the augmented data set vs. non-augmented data set to determine the impact with our data.
+
 #### 6/28/16
 While using the other networks do show some signs of improvement over CIFAR-10, overall, the improvement isn't significant enough, so as a short-term measure, we are going to try jittering the data and preprocessing a bit more closely to see if this brings about any improvement. More specifically, this is easily implemented using TFLearn's API by adding some parameters to the input layer:
 ```
