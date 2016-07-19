@@ -10,3 +10,5 @@ proposal/*.log
 proposal/*.out
 *.synctex.gz
 
+.idea/
+
