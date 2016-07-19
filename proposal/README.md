@@ -37,11 +37,11 @@
 
 ### Data collection
 
-    J. Krause, J. Deng, M. Stark, L. Fei-Fei. Collecting a Large-Scale Dataset of
-    Fine-Grained Cars. In FGVC, 2013.
-
     A. Khosla, N. Jayadevaprakash, B. Yao, L. Fei-Fei. Novel Dataset for
     Fine-Grained Image Categorization: Stanford Dogs. In FGVC, 2011.
+
+    J. Krause, J. Deng, M. Stark, L. Fei-Fei. Collecting a Large-Scale Dataset of
+    Fine-Grained Cars. In FGVC, 2013.
 
 ### ConvNets Reference
 
