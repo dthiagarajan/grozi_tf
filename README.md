@@ -23,6 +23,9 @@ This repository houses all work towards using TensorFlow and other CV tools to r
 ### Notes:
 These are all in reverse chronological order to keep track of recent updates more easily. (6/13/16) I'll be removing updates that aren't as relevant to current tasks, so everything from 6/1/16 and before will be at the bottom of this README.
 
+#### 7/27/16
+Added TFLearn implementation of fine-tuning on VGG-16 network (the only pre-trained model available for TFLearn). The TFLearn implementation is very memory intensive and I've been unable to even test it fully on my local machine. I'm still investigating why the Inception model didn't run into the same problems. Further work is needed to implement randomized backgrounds live during training, attempting to recreate the [Held, Thrun, Savarese (2015)](https://github.com/dthiagarajan/grozi_tf/blob/master/proposal#data-augmentation) study, and getting TensorFlow up and running on AWS.
+
 #### 7/6/16
 The results of fine-tuning the [Inception v3](http://arxiv.org/abs/1512.00567) network on our data set were underwhelming based on the ROC curves. Some classes which were sufficiently distinctive (e.g. 4 - Cheerios, 34 - Tide) performed well while those for which there was little data (e.g. 16 - Snyder's Pretzels) or pose varied too much (e.g. 59 - Dr. Pepper) performed very poorly:
 ![ROC Curve 4 vs Rest](/roc_curves/roc_curve_4_vs_rest.png)
@@ -104,7 +107,7 @@ Another idea I had was to use a higher-level framework built with TensorFlow, su
 Update to the error from the very beginning - it turns out that the installation page on [Tensorflow](https://www.tensorflow.org/versions/0.6.0/get_started/os_setup.html#pip_install) has an outdated version. I installed the 0.8.0 version of TensorFlow, and now all dependencies are there, and the file that works with MNIST data works as detailed in the tutorials.
 
 ####5/29/16
-Figured out why the error kept coming up: the input_data Python file, and the associated imports necessary, are all in a different directory in the TensorFlow soure code (i.e. from their Github), and was not installed through pip. I tried working around that by cloning their repo locally, but that won't work unless I move the relevant files into the folder of my local installation of TensorFlow, which brings up the problem of duplicate folder names. 
+Figured out why the error kept coming up: the input_data Python file, and the associated imports necessary, are all in a different directory in the TensorFlow soure code (i.e. from their Github), and was not installed through pip. I tried working around that by cloning their repo locally, but that won't work unless I move the relevant files into the folder of my local installation of TensorFlow, which brings up the problem of duplicate folder names.
 
 As a result, if I were to change those, I'd have to go through almost all of their source code and fix up the import statements based on my own changes, so I'm choosing to just skip this for now, at least until it proves to be an impasse. At the moment, everything else works (in the scope of everything that I've tried/ran so far), so I'll just continue working with the framework, and hopefully, this won't pose a problem over the course of the summer.
 
